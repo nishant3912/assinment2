@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Components</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <h2>jQuery UI Interactions</h2>
+    <div id="draggable" style="width: 100px; height: 100px; background: #f69320; padding: 10px;"></div>
+    <div id="droppable" style="width: 200px; height: 200px; background: #f2f2f2; padding: 10px; margin-top: 10px;">
+    </div>
+    <div id="resizable" style="width: 100px; height: 100px; background: #32cd32; padding: 10px; margin-top: 10px;">
+    </div>
+    <ol id="selectable">
+        <li class="ui-widget-content ui-corner-tr">Item 1</li>
+        <li class="ui-widget-content ui-corner-tr">Item 2</li>
+        <li class="ui-widget-content ui-corner-tr">Item 3</li>
+        <li class="ui-widget-content ui-corner-tr">Item 4</li>
+    </ol>
+    <script> $(function () { $("#draggable").draggable(); $("#droppable").droppable({ drop: function (event, ui) { $(this).append(ui.draggable.clone()); } }); $("#resizable").resizable(); $("#selectable").selectable(); }); </script>
+    <h2>jQuery UI Widgets</h2>
+    <div id="accordion">
+        <h3>Section 1</h3>
+        <div>
+            <p>Section 1 content</p>
+        </div>
+        <h3>Section 2</h3>
+        <div>
+            <p>Section 2 content</p>
+        </div>
+    </div>
+    <div id="autocomplete"></div> <input type="text" id="datepicker">
+    <div id="slider"></div>
+    <script> $(function () { $("#accordion").accordion(); var availableTags = ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java", "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"]; $("#autocomplete").autocomplete({ source: availableTags }); $("#datepicker").datepicker(); $("#slider").slider(); }); </script>
+    <h2>jQuery UI Effects</h2>
+    <button id="show">Show</button> <button id="hide">Hide</button> <button id="explode">Explode</button> <button
+        id="fadeIn">Fade In</button> <button id="fadeOut">Fade Out</button> <button id="colorAnimate">Color
+        Animate</button>
+
+    <div id="effect" style="width: 200px; height: 200px; background: #f2f2f2; padding: 10px; margin-top: 10px;"></div>
+    <script> $(function () { $("#show").click(function () { $("#effect").show("slow"); }); $("#hide").click(function () { $("#effect").hide("slow"); }); $("#explode").click(function () { $("#effect").toggle("explode"); }); $("#fadeIn").click(function () { $("#effect").fadeIn("slow"); }); $("#fadeOut").click(function () { $("#effect").fadeOut("slow"); }); $("#colorAnimate").click(function () { $("#effect").animate({ backgroundColor: "#8a2be2" }, "slow"); }); }); </script>
+</body>
+
+</html>
